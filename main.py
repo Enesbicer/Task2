@@ -24,6 +24,6 @@ async def predict(file: UploadFile = File(...)):
     # Tahmin yap
     predictions = model.predict(image_array)
     predicted_class_index = np.argmax(predictions[0])
-    predicted_class = class_names[predicted_class_index]
+    predicted_class = class_names[str(predicted_class_index)]
     
     return {"predicted_class": predicted_class}
