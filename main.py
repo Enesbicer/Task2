@@ -17,7 +17,7 @@ with open('class_names.json', 'r') as f:
 async def predict(file: UploadFile = File(...)):
     # Görüntüyü yükle ve işle
     image = Image.open(io.BytesIO(await file.read())).convert('RGB')
-    image = image.resize((224, 224))  # Model input boyutuna göre ayarlayın
+    image = image.resize((32, 32))  # Model input boyutuna göre ayarlayın
     image_array = np.array(image) / 255.0
     image_array = np.expand_dims(image_array, axis=0)
     
