@@ -1,39 +1,65 @@
-**🚦 Traffic Sign Recognition API**
+# 🚦 Traffic Sign Recognition API
 
-This project turns a traffic sign recognition model, previously trained on Google Colab, into a web service using FastAPI.
-You can easily run it with Docker and upload an image to find out which traffic sign it is.
+This project transforms a traffic sign recognition model, previously trained on Google Colab, into a robust web service using FastAPI. Simply run it with Docker and upload an image to identify traffic signs instantly.
 
-**##📂 What Does This Project Do?**
+## 📋 Overview
 
-Takes a traffic sign image as input
-Processes the image and predicts using a TensorFlow model
-Returns the prediction result in JSON format
+This API service provides the following functionality:
 
-**##🧰 Requirements**
+- **Image Upload**: Accepts traffic sign images as input
+- **AI Processing**: Processes images using a pre-trained TensorFlow model
+- **JSON Response**: Returns prediction results in a clean JSON format
+- **Easy Deployment**: Containerized with Docker for simple setup
 
-You need to have the following software installed on your machine:
+## 🛠️ Prerequisites
 
-Docker
-Git (optional but recommended)
+Before getting started, ensure you have the following installed:
 
-**🚀 Setup and Run Instructions**
+- **Docker** - Container platform for running the application
+- **Git** - Version control system (optional but recommended)
 
-**1. Clone the repo:**
+## 🚀 Quick Start
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/Enesbicer/traffic-sign-api.git
 cd traffic-sign-api
+```
 
-**2. Start the Docker service:**
+### 2. Launch the Service
+
+```bash
 docker-compose up
+```
 
-**3. Open the Swagger UI in your browser:**
-<img width="1686" alt="image" src="https://github.com/user-attachments/assets/a739cb90-def4-4616-b1ba-31be4dfb1819" />
+### 3. Access the API
 
-Go to http://localhost:7001/docs
-Find the POST /predict endpoint
-Click the Try it out button
-Click Choose File and select an image file
-Click Execute
-You will see a JSON response on the same page like this:
+Once the service is running, you can interact with it through the interactive Swagger UI:
+
+1. **Open your browser** and navigate to: `http://localhost:7001/docs`
+2. **Locate the endpoint**: Find the `POST /predict` endpoint
+3. **Test the API**:
+   - Click the **"Try it out"** button
+   - Click **"Choose File"** and select a traffic sign image
+   - Click **"Execute"** to process the image
+
+### 4. View Results
+
+The API will return a JSON response containing the prediction:
+
+```json
 {
   "predicted_class": "Stop"
 }
+```
+
+## 🔧 API Endpoints
+
+| Method | Endpoint  | Description                                     |
+|--------|-----------|-------------------------------------------------|
+| POST   |`/predict` | Upload an image and get traffic sign prediction |
+| GET    |`/docs`    | Interactive API documentation (Swagger UI)      |
+
+
+**Note**: Make sure Docker is running on your system before executing the `docker-compose up` command.
