@@ -7,7 +7,7 @@ import json
 
 app = FastAPI()
 
-# Model ve sınıf isimlerini yükle
+# Model ve sınıf isimleri
 model = tf.keras.models.load_model('traffic_signs_model.h5')
 
 with open('class_names.json', 'r') as f:
@@ -17,7 +17,7 @@ with open('class_names.json', 'r') as f:
 async def predict(file: UploadFile = File(...)):
     # Görüntüyü yükle ve işle
     image = Image.open(io.BytesIO(await file.read())).convert('RGB')
-    image = image.resize((32, 32))  # Model input boyutuna göre ayarlayın
+    image = image.resize((32, 32))  # Model input boyutu
     image_array = np.array(image) / 255.0
     image_array = np.expand_dims(image_array, axis=0)
     
