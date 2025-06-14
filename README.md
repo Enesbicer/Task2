@@ -37,6 +37,9 @@ docker-compose up
 
 Once the service is running, you can interact with it through the interactive Swagger UI:
 
+<img width="1687" alt="image" src="https://github.com/user-attachments/assets/b1a62402-37d7-4db8-8133-7753e7c1e7d0" />
+
+
 1. **Open your browser** and navigate to: `http://localhost:7001/docs`
 2. **Locate the endpoint**: Find the `POST /predict` endpoint
 3. **Test the API**:
